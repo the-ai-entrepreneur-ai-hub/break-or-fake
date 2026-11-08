@@ -3,6 +3,7 @@
 Anyone can fake a damage photo with one prompt. Break or Fake checks an 'arrived damaged' claim before a PayPal refund moves.
 
 Live demo: https://breakorfake.trykioko.com/shop
+Video: https://youtu.be/JqiP2aOkWvE
 
 ## Try it in five minutes
 
