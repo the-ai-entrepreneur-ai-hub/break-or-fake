@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <meta name="referrer" content="no-referrer">
+  <title>Live photos, Break or Fake</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/capture.css">
+  <script src="/capture.js" defer></script>
+</head>
+<body>
+  <header class="capture-header">
+    <a href="/shop" class="capture-brand" aria-label="Sunday Supply home"><span aria-hidden="true">✳</span>SUNDAY SUPPLY</a>
+  </header>
+  <main>
+    <h1>Three live photos of the damage</h1>
+    <p class="intro">Write the code on paper, keep it next to the damage, and take three photos from different angles. You have two minutes.</p>
+    <div class="privacy-note"><span aria-hidden="true">◌</span><p>Just the item and your handwritten code. Keep faces, addresses, and personal information out of frame.</p></div>
+    <form id="start-form">
+      <div id="order-field">
+        <label for="order">Test order reference</label>
+        <input id="order" name="order" required pattern="[A-Za-z0-9_-]{1,128}" maxlength="128" autocomplete="off" placeholder="Your experiment order reference">
+      </div>
+      <div class="capture-instructions"><span><b>01</b>Write the code</span><span><b>02</b>Keep it in frame</span><span><b>03</b>Three distinct angles</span></div>
+      <button id="start" type="submit">Start camera and session</button>
+      <p class="camera-permission">We’ll ask permission for the camera only. No microphone.</p>
+    </form>
+    <p id="status" role="status" aria-live="polite">Standalone capture experiment. This page measures capture only. No payment will be made.</p>
+    <section aria-label="Capture challenge" hidden id="challenge">
+      <div class="challenge-heading"><div><span class="eyebrow">Your fresh handwritten code</span><strong id="code"></strong></div><p id="timer" role="timer"></p></div>
+      <p class="code-instructions">Write this on paper. Keep it beside the damaged item in all three frames.</p>
+      <video id="camera" autoplay playsinline muted aria-label="Live camera preview"></video>
+      <p id="direction">Take the first frame straight on.</p>
+      <div class="camera-actions"><button id="frame" type="button">Take frame 1 of 3</button><button id="cancel" type="button">Cancel and stop camera</button></div>
+      <div id="previews" aria-label="Captured frames"></div>
+    </section>
+    <aside class="camera-help"><h2>Camera not working?</h2><p>If the camera is blocked in an in-app browser, open this page in Safari or Chrome over HTTPS. You can stop at any time and return to your claim to ask the seller for help. No automatic denial.</p></aside>
+  </main>
+  <footer>Sunday Supply is a sandbox test store for the Break or Fake demo. No real money.</footer>
+</body>
+</html>

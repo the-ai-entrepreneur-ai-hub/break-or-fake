@@ -1,0 +1,33 @@
+name: break-or-fake
+services:
+  app:
+    build: .
+    image: ${APP_IMAGE:-break-or-fake:local}
+    init: true
+    restart: unless-stopped
+    stop_grace_period: 110s
+    env_file: .env
+    environment:
+      NODE_ENV: production
+      APP_HOST: 0.0.0.0
+      APP_ORIGIN: ${APP_ORIGIN:?Set APP_ORIGIN to the public HTTPS origin}
+      PORT: 3000
+      DATA_DIR: /data
+      LISTING_IMAGE_PATH: /inventory/mug.jpg
+      UPLOAD_LISTING_IMAGE_PATH: /inventory/linen.jpg
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - data:/data
+      - ./inventory:/inventory:ro
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 1g
+volumes:
+  data:
+    name: break-or-fake-data

@@ -1,0 +1,53 @@
+{
+  "name": "break-or-fake",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --import tsx scripts/dev.ts",
+    "build": "vite build",
+    "start": "node --env-file-if-exists=.env --import tsx scripts/serve.ts",
+    "eval": "node --env-file-if-exists=.env --import tsx scripts/eval.ts",
+    "pretest": "node -e \"require('fs').mkdirSync('.notes', { recursive: true, mode: 0o700 })\"",
+    "test": "node --test --import tsx test/*.test.ts",
+    "verify:browser": "npm run build && node scripts/verify-browser.mjs",
+    "verify:docker": "node scripts/verify-docker.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.app.json",
+    "models": "node --env-file-if-exists=.env --import tsx scripts/openrouter-models.ts",
+    "sandbox": "node --env-file-if-exists=.env --import tsx scripts/sandbox.ts",
+    "capture": "node --env-file-if-exists=.env --import tsx scripts/capture.ts",
+    "spike:report": "node --import tsx scripts/spike-report.ts",
+    "spike:review": "node --env-file-if-exists=.env --import tsx scripts/spike-review.ts",
+    "spike:provenance": "node --import tsx scripts/provenance.ts",
+    "spike:compare": "node --env-file-if-exists=.env --import tsx scripts/spike-compare.ts"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0",
+    "@contentauth/c2pa-node": "0.9.9",
+    "@fontsource-variable/dm-sans": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
+    "@paypal/agent-toolkit": "^1.11.0",
+    "@paypal/paypal-server-sdk": "^2.5.0",
+    "ai": "^4.3.19",
+    "lucide-react": "^1.70.0",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5",
+    "sharp": "^0.35.5",
+    "tsx": "^4.23.15",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "playwright": "^1.65.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.6"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "fingerprintAllow": [
+    "@anthropic-ai/sdk",
+    "anthropic-ai-sdk",
+    "new anthropic()",
+    "default_model = `claude-opus-5-5`",
+    "\u0022openai\u0022: \u0022",
+    "\u0022openai\u0022: {",
+    "node_modules/openai",
+    "registry.npmjs.org/openai/",
+    "https://api.anthropic.com/v1/messages",
+    "https://api.openai.com/v1/responses",
+    "anthropic-version",
+    "ANTHROPIC_API_KEY",
+    "ANTHROPIC_MODEL",
+    "const GENERATORS = [\"\u004fpenAI\", \"DALL-E\", \"Adobe Firefly\", \"Midjourney\", \"Stable Diffusion\", \"Qwen-Image\"];",
+    "            readCredentials(Buffer.from(image.data, \"base64\"), image.mimeType, [\"\u004fpenAI\", \"DALL-E\", \"Adobe Firefly\", \"Midjourney\", \"Stable Diffusion\", \"Qwen-Image\"])));"
+  ]
+}

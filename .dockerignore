@@ -1,0 +1,16 @@
+node_modules
+.git
+.env
+.env.*
+!.env.example
+.notes
+.data
+dist
+coverage
+inventory
+backups
+image.png
+image-1.png
+image-2.png
+*.log
+sandbox-ids.jsonl
